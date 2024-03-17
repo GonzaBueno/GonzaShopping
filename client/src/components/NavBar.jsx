@@ -6,7 +6,9 @@ import { useContext, useState } from "react";
 import CartWithItems from "./CartWithItems";
 import EmptyCart from "./EmptyCart";
 import { CartContext } from "../views/ProductPage";
-import { IconMenu2, IconShoppingCart, IconX } from "@tabler/icons-react";
+import { RxCross2 } from "react-icons/rx";
+import { PiShoppingCart } from "react-icons/pi";
+import { IoMdMenu } from "react-icons/io";
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
@@ -41,7 +43,7 @@ function Navbar() {
       <div
         className={`mobile-nav-full ${mobileNav ? "open-flex" : "closed-flex"}`}
       >
-        <IconX onClick={() => setMobileNav(!mobileNav)} className="x-mobile" />
+        <RxCross2  onClick={() => setMobileNav(!mobileNav)} className="x-mobile" />
         <div className="mobile-links">
           <Link onClick={() => setMobileNav(!mobileNav)} to="/categories/all">
             categories
@@ -70,7 +72,7 @@ function Navbar() {
           <h2 className="cart-full-h2">
             Your Shopping Cart ({cartItem.length})
           </h2>
-          <IconX onClick={openCart} />
+          <RxCross2 onClick={openCart} />
         </div>
 
         <div className="cart-body">
@@ -110,7 +112,7 @@ function Navbar() {
                   cartItem.length < 1 ? "cart-icon" : "cart-icon with-items"
                 }`}
               >
-                <IconShoppingCart />
+                <PiShoppingCart />
               </i>
             </div>
             <div className="hamburger-menu">
@@ -121,13 +123,13 @@ function Navbar() {
                   cartItem.length < 1 ? "cart-icon" : "cart-icon with-items"
                 }`}
               >
-                <IconShoppingCart />
+                <PiShoppingCart />
               </i>
               <i
                 onClick={() => setMobileNav(!mobileNav)}
                 className="hamburger-hamb"
               >
-                <IconMenu2 />
+                <IoMdMenu />
               </i>
             </div>
           </div>

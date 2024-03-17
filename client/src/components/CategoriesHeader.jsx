@@ -1,6 +1,7 @@
-import { IconChevronLeft } from "@tabler/icons-react";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaChevronLeft } from "react-icons/fa";
 
 function CategoriesHeader() {
   const [btnName, setBtnName] = useState("All");
@@ -15,7 +16,7 @@ function CategoriesHeader() {
         <div className="catego-header">
           <div className="title-home">
             <Link onClick={() => window.scrollTo(0, 0)} to="/">
-              <IconChevronLeft /> Home
+              <FaChevronLeft /> Home
             </Link>
             <h3>{btnName}</h3>
           </div>

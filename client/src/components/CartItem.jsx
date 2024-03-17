@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../views/ProductPage";
-import { IconX } from "@tabler/icons-react";
+import { RxCross2 } from "react-icons/rx";
 
 function CartItem() {
   const [quantity, setQuantity] = useState(1);
@@ -52,7 +52,7 @@ function CartItem() {
           </div>
           <div className="cart-right">
             <p className="cart-price">{calcPrice(quantity, item.price)}.00$</p>
-            <IconX onClick={() => removeFromCart(item.id)} />
+            <RxCross2 onClick={() => removeFromCart(item.id)} />
           </div>
         </div>
       ))}

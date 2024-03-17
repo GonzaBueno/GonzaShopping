@@ -1,6 +1,6 @@
 import "./TrendingSlider.css";
 import TrendingItem from "./TrendingItem";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { BiSolidLeftArrowAlt, BiSolidRightArrowAlt } from "react-icons/bi"
 
 
 function TrendingSlider() {
@@ -21,10 +21,10 @@ function TrendingSlider() {
           <h3>Trending Now</h3>
           <div className="btns">
             <button title="scroll left" onClick={slideLeft}>
-              <IconArrowLeft />
+              <BiSolidLeftArrowAlt />
             </button>
             <button title="scroll right" onClick={slideRight}>
-              <IconArrowRight />
+              <BiSolidRightArrowAlt />
             </button>
           </div>
         </div>

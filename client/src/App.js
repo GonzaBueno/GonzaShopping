@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { Route, BrowserRouter, Switch, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import Navbar from "./components/NavBar";
 import Categories from "./views/Categories";
@@ -36,10 +36,10 @@ function App() {
 
   return (
     <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
-       <Navbar/>
-      <Switch>
-      <Route index path="/" element={<Home />} />
-      <Route path="categories" element={<Categories />}>
+      <Navbar />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="categories" element={<Categories />}>
           <Route path="all" element={<All />} />
           <Route path="furnitures" element={<Furnitures />} />
           <Route path="electronics" element={<Electronics />} />
@@ -49,8 +49,8 @@ function App() {
           <Route path="skin-care" element={<SkinCare />} />
         </Route>
         <Route path="categories/product/:id" element={<ProductPage />} />
-      </Switch>
-      </CartContext.Provider>
+      </Routes>
+    </CartContext.Provider>
   );
 }
 
